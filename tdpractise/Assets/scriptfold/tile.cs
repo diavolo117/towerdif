@@ -8,7 +8,10 @@ public class Tile : MonoBehaviour
     [SerializeField] public int cost1 = 30;
     [SerializeField] public int cost2 = 50;
     [SerializeField] public int cost3 = 80;
-    
+    [SerializeField] public GameObject buttontile;
+    [SerializeField] public GameObject button1;
+    [SerializeField] public GameObject botton2;
+    [SerializeField] public GameObject botton3;
     private int index;
     public void indextower()
     {
@@ -32,7 +35,39 @@ public class Tile : MonoBehaviour
             
         }
     }
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit)) 
+            {
+                if (hit.collider.gameObject == buttontile)
+                {
+                    ontileclick();
 
+                }
+                if (hit.collider.gameObject == button1)
+                {
+                    indextower();
+
+                }
+                if (hit.collider.gameObject == botton2)
+                {
+                    twndextower();
+
+                }
+                if (hit.collider.gameObject == botton3)
+                {
+                    trndextower();
+
+                }
+            }
+        
+        
+        }
+    }
     public void trndextower()
     {
         if (NewMonoBehaviourScript.Instance.Tryspendmoney(cost3))
