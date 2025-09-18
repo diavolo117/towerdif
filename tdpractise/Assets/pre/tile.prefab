@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 9.66, z: 5.1}
-  m_LocalScale: {x: 17.035286, y: 12, z: 1}
+  m_LocalScale: {x: 17.035286, y: 8.68212, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8683979752212990743}
@@ -151,7 +151,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.9, y: 5.21, z: -19.1}
-  m_LocalScale: {x: 8, y: 10, z: 1}
+  m_LocalScale: {x: 13.5, y: 5.1749997, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8683979752212990743}
@@ -272,7 +272,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 22, y: 8.12, z: -3.3}
-  m_LocalScale: {x: 17.035286, y: 12, z: 1}
+  m_LocalScale: {x: 17.035286, y: 7.9154396, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8683979752212990743}
@@ -516,8 +516,8 @@ MonoBehaviour:
   botton2: {fileID: 8305733286627693868}
   botton3: {fileID: 6568019103176865503}
   towerprefab1: {fileID: 6340466028975695384, guid: bb1aea7098be7444392c2dbbb548a0a3, type: 3}
-  towerprefab2: {fileID: 681792645475817072, guid: d32e56a93f16f0f43b5e9260c360142d, type: 3}
-  towerprefab3: {fileID: 5781408966810508549, guid: 13f3fa1f29e365c4db6fd276be4db432, type: 3}
+  towerprefab2: {fileID: 5676509647071793239, guid: d7f5604522bacd94295b34a7eb91c0c5, type: 3}
+  towerprefab3: {fileID: 5118437057835907185, guid: 6a5a166d214bee74f8196756d738175a, type: 3}
   menuUI: {fileID: 8438810248146678967}
 --- !u!1 &8438810248146678967
 GameObject:

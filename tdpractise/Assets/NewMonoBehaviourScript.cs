@@ -1,29 +1,40 @@
-using System;
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    [SerializeField] private int resource = 50;
-    [SerializeField] public TMP_Text moneytext;
+    public static NewMonoBehaviourScript Instance { get; private set; }
 
+    [SerializeField] private int resource = 50;
+    [SerializeField] private TMP_Text moneyText;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     private void Start()
     {
-        Updatemoneyui();
+        UpdateMoneyUI();
     }
 
-    private void Updatemoneyui()
+    private void UpdateMoneyUI()
     {
-        moneytext.text = "Money: " + resource;
+        if (moneyText != null)
+            moneyText.text = "Money: " + resource;
     }
-    public void moneytaken()
+
+    public void AddGold(int amount)
     {
-        
+        resource += amount;
+        UpdateMoneyUI();
     }
+
     public bool Tryspendmoney(int cost)
     {
         if (resource > cost)
@@ -33,63 +44,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
         }
         return false;
     }
-    public static NewMonoBehaviourScript Instance {  get; private set; }
-    public event Action Ontick;
-    [SerializeField] private float tickrate = 1;
-    private Coroutine tickcoroutine;
 
-    private void Awake()
+    public int GetMoney()
     {
-        if (Instance != null && Instance != this) {
-
-            Destroy(gameObject); return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-    private void OnEnable()
-    {
-        Starttick();
-        NewMonoBehaviourScript.Instance.Ontick += Handletick;
-    }
-
-    private void Handletick()
-    {
-        Updatemoneyui();
-    }
-
-    private void OnDisable()
-    {
-        Stoptick();
-        if (NewMonoBehaviourScript.Instance != null) 
-        {
-            NewMonoBehaviourScript.Instance.Ontick -= Handletick;
-        }
-    }
-
-    private void Stoptick()
-    {
-        if (tickcoroutine != null) 
-        {
-            StopCoroutine(tickcoroutine);
-            tickcoroutine = null;
-        }
-    }
-
-    private void Starttick()
-    {
-        if (tickcoroutine != null) return;
-        tickcoroutine = StartCoroutine(tickgoing());
-    }
-    private IEnumerator tickgoing()
-    {
-        while (true)
-        {
-
-            Ontick?.Invoke();
-            yield return new WaitForSeconds(tickrate);
-
-
-        }
+        return resource;
     }
 }

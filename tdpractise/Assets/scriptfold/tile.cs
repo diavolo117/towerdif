@@ -41,7 +41,7 @@ public class Tile : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit)) 
+            if (Physics.Raycast(ray, out hit) && GameStateManager.Instance.currentState == GameState.Build) 
             {
                 if (hit.collider.gameObject == buttontile)
                 {

@@ -1,37 +1,31 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyMoverSpline : MonoBehaviour
 {
+    [Header("Path Settings")]
     public pathscript path;
     public float speed = 2f;
     public float rotateSpeed = 5f;
 
     private float t = 0f; // параметр движени€ по пути
     private int segment = 0; // текущий сегмент кривой
-    
+
+    [Header("Stats")]
     public float maxHealth = 50f;
+    private float currentHealth;
+
+    [Header("Slow Settings")]
+    public bool isImmuneToSlow = false;
+    private float currentSpeed;       // текуща€ скорость
+    private Coroutine slowCoroutine;  // чтобы не наложилось несколько замедлений
 
     void Start()
     {
         currentHealth = maxHealth;
-    }
-    public void TakeDamage(float damage)
-    {
-        currentHealth -= damage;
-        Debug.Log("тик урона");
-        if (currentHealth <= 0f)
-        {
-            Die();
-        }
+        currentSpeed = speed;
     }
 
-    // —мерть врага
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
-
-    private float currentHealth;
     void Update()
     {
         if (path == null || path.points.Length < 2) return;
@@ -43,7 +37,7 @@ public class EnemyMoverSpline : MonoBehaviour
         Vector3 p3 = GetPoint(segment + 2);
 
         // движение вдоль сегмента
-        t += speed * Time.deltaTime / Vector3.Distance(p1, p2);
+        t += currentSpeed * Time.deltaTime / Vector3.Distance(p1, p2);
 
         if (t > 1f)
         {
@@ -55,8 +49,7 @@ public class EnemyMoverSpline : MonoBehaviour
                 return;
             }
         }
-        
-        
+
         // вычисл€ем позицию по Catmull-Rom
         Vector3 newPos = CatmullRom(p0, p1, p2, p3, t);
 
@@ -74,6 +67,53 @@ public class EnemyMoverSpline : MonoBehaviour
         }
     }
 
+    // ========== Ѕќ≈¬јя Ћќ√» ј ==========
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        Debug.Log($"¬раг получил {damage} урона (осталось {currentHealth})");
+        if (currentHealth <= 0f)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    public void ApplyKnockback(Vector3 direction, float force)
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.AddForce(direction.normalized * force, ForceMode.Impulse);
+        }
+        else
+        {
+            transform.position += direction.normalized * force;
+        }
+    }
+
+    public void ApplySlow(float multiplier, float duration)
+    {
+        if (isImmuneToSlow) return;
+
+        if (slowCoroutine != null) StopCoroutine(slowCoroutine);
+        slowCoroutine = StartCoroutine(SlowEffect(multiplier, duration));
+    }
+
+    private IEnumerator SlowEffect(float multiplier, float duration)
+    {
+        currentSpeed = speed * multiplier;
+        yield return new WaitForSeconds(duration);
+        currentSpeed = speed;
+    }
+
+    // ========== ¬—ѕќћќ√ј“≈Ћ№Ќџ≈ ћ≈“ќƒџ ==========
+
     Vector3 GetPoint(int index)
     {
         if (index < 0) return path.points[0].position;
@@ -81,7 +121,6 @@ public class EnemyMoverSpline : MonoBehaviour
         return path.points[index].position;
     }
 
-    // формула Catmull-Rom
     Vector3 CatmullRom(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
     {
         return 0.5f * (
@@ -92,4 +131,3 @@ public class EnemyMoverSpline : MonoBehaviour
         );
     }
 }
-
