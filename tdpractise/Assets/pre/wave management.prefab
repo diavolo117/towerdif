@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7976093027957183689}
   - component: {fileID: 7921210488270022804}
   m_Layer: 0
-  m_Name: 312231
+  m_Name: wave management
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

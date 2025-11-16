@@ -40,6 +40,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (resource > cost)
         {
             resource -= cost;
+            UpdateMoneyUI();
             return true;
         }
         return false;
