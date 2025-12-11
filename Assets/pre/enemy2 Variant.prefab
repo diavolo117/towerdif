@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3134852427389546783, guid: 2737008d8049b5146ac62bb7b8183f13, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.56
+      objectReference: {fileID: 0}
     - target: {fileID: 3689587738714293425, guid: 2737008d8049b5146ac62bb7b8183f13, type: 3}
       propertyPath: m_UseGravity
       value: 0
@@ -197,7 +201,8 @@ PrefabInstance:
       value: enemy2 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2362959343892261797, guid: 2737008d8049b5146ac62bb7b8183f13, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2414110918683051290, guid: 2737008d8049b5146ac62bb7b8183f13, type: 3}
       insertIndex: -1
