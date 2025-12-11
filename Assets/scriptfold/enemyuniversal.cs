@@ -7,14 +7,14 @@ public class EnemyMoverSpline : MonoBehaviour
     public pathscript path;
     public float speed = 2f;
     public float rotateSpeed = 5f;
-
+    public static int aliveEnemies = 0;
     private float t = 0f; // параметр движения по пути
     private int segment = 0; // текущий сегмент кривой
 
     [Header("Stats")]
     public float maxHealth = 50f;
     private float currentHealth;
-
+    public float damageToBuilding = 10f;
     [Header("Slow Settings")]
     public bool isImmuneToSlow = false;
     private float currentSpeed;       // текущая скорость
@@ -45,9 +45,19 @@ public class EnemyMoverSpline : MonoBehaviour
             segment++;
             if (segment >= path.points.Length - 2)
             {
-                Destroy(gameObject); // конец пути
+                // 1. Находим здание
+                BuildingHealth building = FindAnyObjectByType<BuildingHealth>();
+                if (building != null && !building.isDead)
+                {
+                    building.TakeDamage(damageToBuilding);
+                }
+
+                EnemyMoverSpline.aliveEnemies--;
+                
+                Destroy(gameObject);
                 return;
             }
+
         }
 
         // вычисляем позицию по Catmull-Rom
@@ -81,20 +91,36 @@ public class EnemyMoverSpline : MonoBehaviour
 
     private void Die()
     {
+        EnemyMoverSpline.aliveEnemies--;
         Destroy(gameObject);
     }
 
-    public void ApplyKnockback(Vector3 direction, float force)
+    private Coroutine knockbackCoroutine;
+
+    public void ApplyPathKnockback(float duration, float multiplier = 1f)
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.AddForce(direction.normalized * force, ForceMode.Impulse);
-        }
-        else
-        {
-            transform.position += direction.normalized * force;
-        }
+        // Если враг иммунен к контролю — не даём нокбэк
+        if (isImmuneToSlow)
+            return;
+
+        if (knockbackCoroutine != null)
+            StopCoroutine(knockbackCoroutine);
+
+        knockbackCoroutine = StartCoroutine(KnockbackRoutine(duration, multiplier));
+    }
+
+
+    private IEnumerator KnockbackRoutine(float duration, float multiplier)
+    {
+        float originalSpeed = currentSpeed;
+
+        // Двигаемся назад
+        currentSpeed = -Mathf.Abs(originalSpeed) * multiplier;
+
+        yield return new WaitForSeconds(duration);
+
+        // Возвращаем нормальную скорость
+        currentSpeed = originalSpeed;
     }
 
     public void ApplySlow(float multiplier, float duration)

@@ -128,9 +128,25 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 5628222221402114405, guid: 402d613e9a1c7b6468ce708300a4c16a, type: 3}
+      propertyPath: damageToBuilding
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7900169409215943751, guid: 402d613e9a1c7b6468ce708300a4c16a, type: 3}
       propertyPath: m_Mass
       value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157968341652231660, guid: 402d613e9a1c7b6468ce708300a4c16a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1234744
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157968341652231660, guid: 402d613e9a1c7b6468ce708300a4c16a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1234744
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157968341652231660, guid: 402d613e9a1c7b6468ce708300a4c16a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1234744
       objectReference: {fileID: 0}
     - target: {fileID: 9157968341652231660, guid: 402d613e9a1c7b6468ce708300a4c16a, type: 3}
       propertyPath: m_LocalPosition.x

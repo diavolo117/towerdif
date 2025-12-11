@@ -123,5 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 20
-  slowMultiplier: -20
-  slowDuration: 0.1
+  basedamage: 20
+  slowMultiplier: 1.2
+  slowDuration: 0.2

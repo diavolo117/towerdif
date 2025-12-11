@@ -7,6 +7,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private pathscript defaultPath; // назначь в инспекторе
     public Transform spawnPoint;
     public Wave[] waves;
+    
 
     private int currentWaveIndex = -1;
     private bool waveInProgress = false;
@@ -23,8 +24,10 @@ public class WaveManager : MonoBehaviour
         if (enemy != null)
         {
             enemy.path = defaultPath;
+            EnemyMoverSpline.aliveEnemies++;   // <--- ДОБАВИЛИ
         }
     }
+
     public void StartNextWave()
     {
         if (waveInProgress) return;
@@ -55,14 +58,31 @@ public class WaveManager : MonoBehaviour
             }
         }
 
-        Debug.Log("Волна завершена!");
+        // --- ВСЕ ВРАГИ ПОРОЖДЕНЫ, ОЖИДАЕМ ИХ СМЕРТИ ---
+        while (EnemyMoverSpline.aliveEnemies > 0)
+        {
+            yield return null; // ждём кадр
+        }
+
+        Debug.Log("Волна полностью зачищена!");
+
+        // волна окончена
         waveInProgress = false;
 
         yield return new WaitForSeconds(wave.timeBeforeNextWave);
 
-        // конец боя → снова Build
-        GameStateManager.Instance.EndBattle();
+        // если это последняя волна – победа
+        if (currentWaveIndex >= waves.Length - 1)
+        {
+            Debug.Log("Все волны пройдены! Победа!");
+            GameManager.Instance.GameOver(true);
+        }
+        else
+        {
+            GameStateManager.Instance.EndBattle(); // переход в Build или что у тебя там
+        }
+
     }
 
-    
+
 }

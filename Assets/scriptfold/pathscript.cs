@@ -3,6 +3,7 @@ using UnityEngine;
 public class pathscript : MonoBehaviour
 {
     [SerializeField] public Transform[] points;
+    public static int aliveEnemies = 0;
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

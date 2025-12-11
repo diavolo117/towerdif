@@ -52,6 +52,7 @@ public class UpgradeManager : MonoBehaviour
     public bool level1Unlocked = true;
     public bool level2Unlocked = false;
     public bool level3Unlocked = false;
+    public int currentLevel = 1;
 
     public bool IsLevelUnlocked(int level)
     {
@@ -79,6 +80,7 @@ public class UpgradeManager : MonoBehaviour
             return;
         }
 
+        currentLevel = levelNumber;
         string sceneName = "Level" + levelNumber;
         Debug.Log("Loading scene: " + sceneName);
         SceneManager.LoadScene(sceneName);

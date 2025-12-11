@@ -1,11 +1,11 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     public float speed = 10f;
     public float damage;
     public float basedamage = 20f;
-    public float slowMultiplier = 0.5f; // например 50% скорости
+    public float slowMultiplier = 0.5f; // РЅР°РїСЂРёРјРµСЂ 50% СЃРєРѕСЂРѕСЃС‚Рё
     public float slowDuration = 2f;
     private Vector3 direction;
     private UpgradeManager upgradeManager;
@@ -37,7 +37,8 @@ public class Projectile : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
-            enemy.ApplySlow(slowMultiplier, slowDuration);
+            enemy.ApplyPathKnockback(slowDuration, slowMultiplier); // 0.4 СЃРµРєСѓРЅРґС‹, СЃРёР»Р° Г—1.2
+
             Destroy(gameObject);
         }
     }
