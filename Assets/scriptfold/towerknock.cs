@@ -13,6 +13,9 @@ public class TowerProjectile : MonoBehaviour
     public float baseDamage = 10f;
     private UpgradeManager upgradeManager;
     private UpgradeManager.UpgradeLevel upgrade;
+    public AudioSource audioSource;
+    public AudioClip soundClip;
+
     private void Start()
     {
         upgradeManager = Object.FindAnyObjectByType<UpgradeManager>();
@@ -36,6 +39,9 @@ public class TowerProjectile : MonoBehaviour
 
     void Shoot()
     {
+        audioSource.PlayOneShot(soundClip);
+
+
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         proj.GetComponent<Projectile>().Init(firePoint.forward);
     }

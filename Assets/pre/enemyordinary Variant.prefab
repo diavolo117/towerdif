@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: damageToBuilding
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7521791495981359499, guid: 402d613e9a1c7b6468ce708300a4c16a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 7900169409215943751, guid: 402d613e9a1c7b6468ce708300a4c16a, type: 3}
       propertyPath: m_Mass
       value: 0.0000001

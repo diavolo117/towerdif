@@ -8,6 +8,8 @@ public class Tower : MonoBehaviour
     private float timer;
     private UpgradeManager upgradeManager;
     private UpgradeManager.UpgradeLevel upgrade;
+    public AudioSource audioSource;
+    public AudioClip soundClip;
     private float finalFireRate;
     void Start()
     {
@@ -31,7 +33,8 @@ public class Tower : MonoBehaviour
 
         if (timer >= finalFireRate)
         {
-            // Включаем хитбокс на короткое время
+            audioSource.PlayOneShot(soundClip);
+
             StartCoroutine(ActivateHitbox());
             timer = 0f;
         }

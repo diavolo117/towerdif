@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class WaveManager : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private pathscript defaultPath; // назначь в инспекторе
     public Transform spawnPoint;
     public Wave[] waves;
-    
+    public AudioSource audioSource;
+    public AudioClip soundClip;
 
     private int currentWaveIndex = -1;
     private bool waveInProgress = false;
@@ -36,6 +38,8 @@ public class WaveManager : MonoBehaviour
         if (currentWaveIndex < waves.Length)
         {
             StartCoroutine(RunWave(waves[currentWaveIndex]));
+            audioSource.PlayOneShot(soundClip);
+
         }
         else
         {

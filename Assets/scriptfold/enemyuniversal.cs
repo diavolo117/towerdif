@@ -10,7 +10,8 @@ public class EnemyMoverSpline : MonoBehaviour
     public static int aliveEnemies = 0;
     private float t = 0f; // параметр движения по пути
     private int segment = 0; // текущий сегмент кривой
-
+    public AudioSource audioSource;
+    public AudioClip soundClip;
     [Header("Stats")]
     public float maxHealth = 50f;
     private float currentHealth;
@@ -91,6 +92,8 @@ public class EnemyMoverSpline : MonoBehaviour
 
     private void Die()
     {
+        audioSource.PlayOneShot(soundClip);
+
         EnemyMoverSpline.aliveEnemies--;
         Destroy(gameObject);
     }
