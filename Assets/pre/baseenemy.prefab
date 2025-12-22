@@ -235,6 +235,8 @@ MonoBehaviour:
   path: {fileID: 0}
   speed: 2
   rotateSpeed: 5
+  audioSource: {fileID: 0}
+  soundClip: {fileID: 0}
   maxHealth: 200
   damageToBuilding: 10
   isImmuneToSlow: 1

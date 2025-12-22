@@ -237,6 +237,80 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.50000006
   m_Center: {x: -0.0000004768372, y: 0, z: 0.00000005960465}
+--- !u!1001 &6718740520467310001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 9157968341652231660}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.52819186
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.52819186
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.52819186
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.7627585
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.16504863
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4009001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+      propertyPath: m_Name
+      value: dino125
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+--- !u!4 &6536829287969276506 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d8a0eb3a849c7774794301ab821b950f, type: 3}
+  m_PrefabInstance: {fileID: 6718740520467310001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6815923950540460278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -347,6 +421,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2414110918683051290, guid: 2737008d8049b5146ac62bb7b8183f13, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7919881618386838333}
+    - targetCorrespondingSourceObject: {fileID: 2414110918683051290, guid: 2737008d8049b5146ac62bb7b8183f13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6536829287969276506}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2737008d8049b5146ac62bb7b8183f13, type: 3}
 --- !u!4 &9157968341652231660 stripped
