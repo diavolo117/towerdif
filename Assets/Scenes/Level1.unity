@@ -258,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 87002387}
   m_Layer: 0
-  m_Name: hui (2)
+  m_Name: path2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 271870776}
   m_Layer: 0
-  m_Name: hui (6)
+  m_Name: path6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -727,7 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 316939341}
   m_Layer: 0
-  m_Name: hui (5)
+  m_Name: path5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1209,7 +1209,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 0.22
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1252,7 +1252,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5000
+  m_ColorTemperature: 7373
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -1627,7 +1627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695454760}
   m_Layer: 0
-  m_Name: hui (8)
+  m_Name: path8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2100,7 +2100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 932968328}
   m_Layer: 0
-  m_Name: hui (1)
+  m_Name: path1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2367,7 +2367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1094459714}
   m_Layer: 0
-  m_Name: hui (7)
+  m_Name: path7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2881,7 +2881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258507083}
   m_Layer: 0
-  m_Name: hui
+  m_Name: path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3325,7 +3325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1347263522}
   m_Layer: 0
-  m_Name: hui (9)
+  m_Name: path9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3598,7 +3598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1460243329}
   m_Layer: 0
-  m_Name: hui (3)
+  m_Name: path3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4067,7 +4067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1712541425}
   m_Layer: 0
-  m_Name: hui (4)
+  m_Name: path4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
