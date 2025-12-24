@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 8894271074560656092}
-  tickInterval: 5
+  tickInterval: 4
   audioSource: {fileID: 8370367363796677904}
   soundClip: {fileID: 8300000, guid: 6f3c0d6f35a28ca4995733075c79d9b6, type: 3}
 --- !u!1 &8894271074560656092
@@ -356,6 +356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0411\u0430\u0448\u043D\u044F 3"
       objectReference: {fileID: 0}
+    - target: {fileID: 6317578925029434746, guid: 63606808edc79d449b5362f36ed0abce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8824b68a0e1661d4eb4c0bf6d3d8478b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
